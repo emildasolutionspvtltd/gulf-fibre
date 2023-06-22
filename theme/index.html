@@ -25,15 +25,15 @@
   </div>
   <section class="top-section wf-section">
     <div class="ts-wrapper w-container">
-      <div class="ts-right__wrapper"><img src="{{ images.4b53298a.url }}" loading="lazy" height="0" data-sizes="[{&quot;max&quot;:10000,&quot;size&quot;:&quot;100vw&quot;}]" sizes="100vw" alt="{{ images.4b53298a.alt | trim | escape }}" class="ts-ryt__image"></div>
+      <div class="ts-right__wrapper"><img src="{{ images.4b53298a.url }}" loading="lazy" height="0" data-sizes="[{&quot;max&quot;:991,&quot;size&quot;:&quot;100vw&quot;},{&quot;max&quot;:10000,&quot;size&quot;:&quot;50vw&quot;}]" sizes="(max-width: 991px) 100vw, 50vw" alt="{{ images.4b53298a.alt | trim | escape }}" class="ts-ryt__image"></div>
       <div class="ts-left__wrapper">
         <a href="{{ links.2f }}" aria-current="page" class="logo_link w-inline-block w--current"><img src="{{ images.-51e765b5.url }}" loading="lazy" width="292" data-sizes="[{&quot;max&quot;:479,&quot;size&quot;:&quot;87vw&quot;},{&quot;max&quot;:10000,&quot;size&quot;:&quot;292px&quot;}]" alt="{{ images.-51e765b5.alt | trim | escape }}" class="ts-logo"></a>
         <h1 class="ts-heading">{{ texts.6cb9f998 }}</h1>
         <p class="ts-para">{{ texts.7f7d8134 }}</p>
         <div class="ts-button__wrap">
-          <a href="{{ links.23 }}" class="ts-button1 w-button">{{ texts.-1b2ccb81 }}</a>
-          <a href="{{ links.23 }}" class="ts-button2 w-button">{{ texts.7f2746de }}</a>
-        </div><img src="{{ images.4b53298a.url }}" loading="lazy" data-sizes="[{&quot;max&quot;:479,&quot;size&quot;:&quot;93vw&quot;},{&quot;max&quot;:767,&quot;size&quot;:&quot;96vw&quot;},{&quot;max&quot;:991,&quot;size&quot;:&quot;97vw&quot;},{&quot;max&quot;:10000,&quot;size&quot;:&quot;100vw&quot;}]" sizes="(max-width: 479px) 93vw, (max-width: 767px) 96vw, (max-width: 991px) 97vw, 100vw" alt="{{ images.4b53298a.alt | trim | escape }}" class="image-3">
+          <a href="{{ links.986fe87 }}" class="ts-button1 w-button">{{ texts.-1b2ccb81 }}</a>
+          <a href="{{ links.6c80469d }}" class="ts-button2 w-button">{{ texts.7f2746de }}</a>
+        </div><img src="{{ images.4b53298a.url }}" loading="lazy" data-sizes="[{&quot;max&quot;:10000,&quot;size&quot;:&quot;100vw&quot;}]" sizes="100vw" alt="{{ images.4b53298a.alt | trim | escape }}" class="image-3">
       </div>
     </div>
   </section>
@@ -51,7 +51,7 @@
       {%- unless collection.length == 0 -%}<div role="list" class="p-collection__list w-dyn-items">
         {%- for item in collection -%}<div id="w-node-_7a58e63a-96c2-7bd9-ed99-1aa3575b13f3-339c139f" role="listitem" class="p-collection__item w-dyn-item">
           <a href="{{ item.url }}" class="products-takeover w-inline-block">
-            <div class="pc-div" style="background-image: url('{{item.data.f_product-1st-image.url}}');">
+            <div id="products" class="pc-div" style="background-image: url('{{item.data.f_product-1st-image.url}}');">
               <div class="pc-bg__image">
                 <div class="pc-text">{{ item.data.title }}</div>
               </div>
@@ -71,7 +71,7 @@
         <h1 class="oc-lheading">{{ texts.-7635115a }}</h1>
         <p class="oc-lpara">{{ texts.-ffeee53 }}</p>
       </div>
-      <div class="oc-ryt__wrapper"><img src="{{ images.-3de4ec5c.url }}" loading="lazy" width="564" data-sizes="[{&quot;max&quot;:479,&quot;size&quot;:&quot;93vw&quot;},{&quot;max&quot;:726,&quot;size&quot;:&quot;95vw&quot;},{&quot;max&quot;:991,&quot;size&quot;:&quot;690px&quot;},{&quot;max&quot;:10000,&quot;size&quot;:&quot;42vw&quot;}]" sizes="(max-width: 479px) 93vw, (max-width: 726px) 95vw, (max-width: 991px) 690px, 42vw" alt="{{ images.-3de4ec5c.alt | trim | escape }}" class="oc-rimage"></div>
+      <div class="oc-ryt__wrapper"><img src="{{ images.-3de4ec5c.url }}" loading="lazy" width="564" data-sizes="[{&quot;max&quot;:991,&quot;size&quot;:&quot;100vw&quot;},{&quot;max&quot;:10000,&quot;size&quot;:&quot;42vw&quot;}]" sizes="(max-width: 991px) 100vw, 42vw" alt="{{ images.-3de4ec5c.alt | trim | escape }}" class="oc-rimage"></div>
     </div>
     <div class="oc-grid__container w-container">
       <div id="w-node-_0c01b6bb-e3fc-d520-d116-7e09ea729399-339c139f" class="co-girdwrapper"><img src="{{ images.78fdcadc.url }}" loading="lazy" width="81" alt="{{ images.78fdcadc.alt | trim | escape }}" class="oc-gimage">
@@ -89,7 +89,7 @@
     </div>
   </section>
   <section class="contact-section wf-section">
-    <div class="c-container w-container">
+    <div id="contact" class="c-container w-container">
       <div class="c-leftwrapper">
         <div class="c-text">{{ texts.253fd2be }}</div>
         <h1 class="c-heading">{{ texts.-24a4bb90 }}</h1>

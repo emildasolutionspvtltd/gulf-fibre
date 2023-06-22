@@ -445,9 +445,13 @@ collections:
             label: Link
             name: 2f
             widget: string
-          - hint: 'Original link: #, key: 23'
+          - hint: 'Original link: #products, key: 986fe87'
             label: Link
-            name: '23'
+            name: 986fe87
+            widget: string
+          - hint: 'Original link: #contact, key: 6c80469d'
+            label: Link
+            name: 6c80469d
             widget: string
       - label: Images
         name: images

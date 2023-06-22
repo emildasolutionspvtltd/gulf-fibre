@@ -524,6 +524,10 @@
 }
 
 .pt-2nd__image {
+  width: 1200px;
+  height: 800px;
+  max-width: none;
+  object-fit: cover;
   border-radius: 30px;
   margin-top: 60px;
 }
@@ -911,6 +915,8 @@
   }
 
   .pt-2nd__image {
+    width: 750px;
+    height: 500px;
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -1213,7 +1219,12 @@
     line-height: 29px;
   }
 
+  .ptop-container {
+    margin-bottom: 40px;
+  }
+
   .pt-2nd__image {
+    width: 570px;
     padding-left: 16px;
     padding-right: 16px;
   }
@@ -1423,6 +1434,15 @@
     margin-right: 0;
     font-size: 14px;
     line-height: 22.4px;
+  }
+
+  .ptop-container {
+    margin-bottom: 0;
+  }
+
+  .pt-2nd__image {
+    width: 340px;
+    height: 240px;
   }
 
   .pt-heading {
