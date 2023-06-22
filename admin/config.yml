@@ -1,0 +1,603 @@
+backend:
+  name: git-gateway
+  accept_roles:
+    - admin
+    - editor
+media_folder: theme/assets/images
+public_folder: /assets/images
+collections:
+  - name: pages
+    label: Pages
+    identifier_field: title
+    extension: md
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    folder: cms/pages
+    fields:
+      - label: Title
+        name: title
+        widget: string
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '{{slug}}.html'
+      - &ref_0
+        label: Seo
+        name: seo
+        widget: object
+        collapsed: true
+        fields:
+          - label: Title
+            name: title
+            widget: string
+            required: false
+          - label: Description
+            name: description
+            widget: string
+            required: false
+          - label: No index
+            name: noindex
+            widget: boolean
+            default: false
+            required: false
+          - label: Open Graph Title
+            name: og:title
+            widget: string
+            required: false
+          - label: Open Graph Image
+            name: og:image
+            widget: image
+            required: false
+            media_library:
+              config:
+                multiple: false
+          - label: Twitter Title
+            name: twitter:title
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Card
+            name: twitter:card
+            widget: string
+            default: summary
+            required: false
+          - label: Twitter Site
+            name: twitter:site
+            widget: string
+            required: false
+          - label: Twitter Creator
+            name: twitter:creator
+            widget: string
+            required: false
+          - label: Additional HTML tags
+            name: additional_tags
+            widget: text
+            required: false
+  - name: products
+    label: Products
+    folder: cms/products
+    create: true
+    identifier_field: name
+    extension: md
+    slug: '{{slug}}'
+    fields:
+      - hint: ''
+        name: title
+        label: Name
+        widget: string
+        required: true
+      - hint: ''
+        name: created-on
+        label: Created On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: updated-on
+        label: Updated On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: published-on
+        label: Published On
+        widget: datetime
+        required: false
+      - hint: ''
+        name: f_heading
+        label: Heading
+        widget: string
+        required: false
+      - hint: ''
+        name: f_product-2nd-image
+        label: product 2nd image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_product-1st-image
+        label: product 1st image
+        widget: object
+        required: false
+        fields:
+          - hint: ''
+            name: url
+            label: Image
+            widget: image
+            required: false
+            allow_multiple: false
+          - hint: Image Alt
+            name: alt
+            label: alt
+            widget: string
+            required: false
+      - hint: ''
+        name: f_para-1
+        label: para 1
+        widget: string
+        required: false
+      - hint: ''
+        name: f_para-2
+        label: para 2
+        widget: string
+        required: false
+      - label: Tags
+        widget: hidden
+        name: tags
+        default: products
+      - label: Layout
+        widget: hidden
+        name: layout
+        default: '[products].html'
+      - label: Publish Date
+        name: date
+        widget: datetime
+      - *ref_0
+  - label: Theme Settings
+    name: settings
+    identifier_field: title
+    extension: json
+    create: false
+    delete: false
+    slug: '{{slug}}'
+    editor:
+      preview: false
+    files:
+      - label: General
+        name: site
+        file: cms/_data/settings/site.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: General
+          - hint: Full domain url (needed for a correct sitemap file)
+            name: domain
+            label: Domain
+            widget: string
+            required: false
+          - name: favicon
+            label: Favicon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: apple_touch_icon
+            label: Apple Touch Icon
+            widget: image
+            allow_multiple: false
+            required: false
+          - name: header_additional_content
+            label: Additional Content Header
+            hint: Content here will be placed before </head> tag
+            widget: text
+            required: false
+          - name: footer_additional_content
+            label: Additional Content Footer
+            hint: Content here will be placed before </body> tag
+            widget: text
+            required: false
+          - name: images_optimization
+            label: Images Optimization
+            widget: object
+            collapsed: false
+            fields:
+              - label: Image Formats
+                name: formats
+                widget: select
+                multiple: true
+                options:
+                  - label: Avif
+                    value: avif
+                  - label: Webp
+                    value: webp
+              - label: Image Dimensions
+                name: dimensions
+                widget: select
+                multiple: true
+                options:
+                  - label: '500'
+                    value: 500
+                  - label: '800'
+                    value: 800
+                  - label: '1080'
+                    value: 1080
+                  - label: '1600'
+                    value: 1600
+                  - label: '2000'
+                    value: 2000
+                  - label: '2600'
+                    value: 2600
+      - label: Colors
+        name: colors
+        file: cms/_data/colors.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Colors
+      - label: Texts
+        name: texts
+        file: cms/_data/texts.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Texts
+          - hint: 'Original text: EXQUISITE FABRIC SELECTION, key: 6cb9f998'
+            label: Text
+            name: 6cb9f998
+            widget: string
+          - hint: >-
+              Original text: As a global player in the textile industry, Gulf
+              Fibre Textile Trading Co. LLC takes pride in our extensive network
+              and strategic partnerships. We have developed strong
+              collaborations with suppliers and manufacturers across Uzbekistan,
+              China, India, Indonesia, Pakistan, and beyond. This allows us to
+              access a diverse range of high-quality products and stay at the
+              forefront of emerging trends and innovations in the textile
+              market., key: 7f7d8134
+            label: Text
+            name: 7f7d8134
+            widget: text
+          - hint: 'Original text: View Products, key: -1b2ccb81'
+            label: Text
+            name: '-1b2ccb81'
+            widget: string
+          - hint: 'Original text: Contact Us, key: 7f2746de'
+            label: Text
+            name: 7f2746de
+            widget: string
+          - hint: 'Original text: PRODUCTS, key: -d2e3e9c'
+            label: Text
+            name: '-d2e3e9c'
+            widget: string
+          - hint: 'Original text: EXPLORE OUR PREMIUM OFFERINGS, key: -7284e37d'
+            label: Text
+            name: '-7284e37d'
+            widget: string
+          - hint: >-
+              Original text: Discover our exquisite range of home textiles,
+              fabrics, yarns, and aroma diffusers, carefully selected for their
+              exceptional quality and timeless beauty. Elevate your living
+              spaces with our premium products that seamlessly blend comfort,
+              style, and sophistication., key: -7f8f8fa2
+            label: Text
+            name: '-7f8f8fa2'
+            widget: text
+          - hint: 'Original text: No items found., key: 3d503d2b'
+            label: Text
+            name: 3d503d2b
+            widget: string
+          - hint: 'Original text: OUR COMPANY, key: -13865497'
+            label: Text
+            name: '-13865497'
+            widget: string
+          - hint: 'Original text: TRUSTED SUPPLIER OF FINE TEXTILES, key: -7635115a'
+            label: Text
+            name: '-7635115a'
+            widget: string
+          - hint: >-
+              Original text: Gulf Fibre Textile Trading Co. LLC is a renowned
+              global company specializing in premium home textiles. With a
+              strong focus on quality and customer satisfaction, we curate a
+              diverse collection of superior products sourced from trusted
+              suppliers worldwide. Our commitment to excellence and industry
+              expertise sets us apart as a reliable and trusted partner in the
+              world of home textiles., key: -ffeee53
+            label: Text
+            name: '-ffeee53'
+            widget: text
+          - hint: 'Original text: Uncompromising Quality, key: -1ad5a351'
+            label: Text
+            name: '-1ad5a351'
+            widget: string
+          - hint: >-
+              Original text: Immerse yourself in the world of superior textiles,
+              fabrics, yarns, and aroma diffusers, meticulously selected for
+              uncompromising quality and craftsmanship, elevating your living
+              spaces to new heights., key: -5c63681b
+            label: Text
+            name: '-5c63681b'
+            widget: text
+          - hint: 'Original text: Discover Global Trends, key: -2f8d4e44'
+            label: Text
+            name: '-2f8d4e44'
+            widget: string
+          - hint: >-
+              Original text: Benefit from our extensive network and industry
+              expertise, as we bring you a diverse range of textile offerings
+              curated to reflect the latest global trends, ensuring your home
+              décor stays ahead of the curve., key: 1811305f
+            label: Text
+            name: 1811305f
+            widget: text
+          - hint: 'Original text: Seamless Digital Experience, key: 6ce26ebb'
+            label: Text
+            name: 6ce26ebb
+            widget: string
+          - hint: >-
+              Original text: Experience the convenience of our upcoming website,
+              where seamless navigation and user-friendly interface combine to
+              create a digital platform that makes browsing, connecting, and
+              shopping for the perfect textiles an effortless and elegant
+              experience., key: 78e885e9
+            label: Text
+            name: 78e885e9
+            widget: text
+          - hint: 'Original text: CONTACT US, key: 253fd2be'
+            label: Text
+            name: 253fd2be
+            widget: string
+          - hint: 'Original text: LET’S CHAT! GET IN TOUCH, key: -24a4bb90'
+            label: Text
+            name: '-24a4bb90'
+            widget: string
+          - hint: >-
+              Original text: Reach out to our dedicated customer support team
+              for prompt assistance and exceptional service. We’re here to help
+              with any inquiries or concerns you may have regarding our products
+              or orders., key: 139c21c6
+            label: Text
+            name: 139c21c6
+            widget: text
+          - hint: "Original text: +971\_507\_605\_133 , key: 42b4c4b0"
+            label: Text
+            name: 42b4c4b0
+            widget: string
+          - hint: 'Original text: +48 502 128 475, key: 26ef87cf'
+            label: Text
+            name: 26ef87cf
+            widget: string
+          - hint: 'Original text: admin@gulffibretextile.com , key: -1e422aef'
+            label: Text
+            name: '-1e422aef'
+            widget: string
+          - hint: 'Original text: support@gulffibretextile.com, key: -37e6391'
+            label: Text
+            name: '-37e6391'
+            widget: string
+          - hint: 'Original text: No.103 Makateb building , key: -4c5ce2a6'
+            label: Text
+            name: '-4c5ce2a6'
+            widget: string
+          - hint: 'Original text: Airport Road, 95687 Dubai, UAE, key: 2b20bc5c'
+            label: Text
+            name: 2b20bc5c
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been received!, key:
+              5a0ea5a1
+            label: Text
+            name: 5a0ea5a1
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: 'Original text: Gulf Fibre Textile Trading Co. LLC:, key: -2cd9c5fb'
+            label: Text
+            name: '-2cd9c5fb'
+            widget: string
+          - hint: >-
+              Original text: Your destination for premium home textiles and
+              more., key: -33604410
+            label: Text
+            name: '-33604410'
+            widget: string
+          - hint: >-
+              Original text: All Rights Reserved © Gulf Fibre Gulf Fibre Textile
+              Trading Co, key: 4fc375db
+            label: Text
+            name: 4fc375db
+            widget: string
+          - hint: >-
+              Original text: Designed & Developed by Emilda Solutions, key:
+              7bea200a
+            label: Text
+            name: 7bea200a
+            widget: string
+      - label: Links
+        name: links
+        file: cms/_data/links.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Links
+          - hint: 'Original link: /, key: 2f'
+            label: Link
+            name: 2f
+            widget: string
+          - hint: 'Original link: #, key: 23'
+            label: Link
+            name: '23'
+            widget: string
+      - label: Images
+        name: images
+        file: cms/_data/images.json
+        fields:
+          - label: Title
+            name: title
+            widget: hidden
+            default: Images
+          - label: Image
+            name: '-7e4e78b1'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4b53298a
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-51e765b5'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-3de4ec5c'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 78fdcadc
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 77b9ae45
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 790be25d
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '-1301e1c9'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2a6e0e91
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1229fd6e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: '0'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+publish_mode: editorial_workflow
