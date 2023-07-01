@@ -3,12 +3,24 @@
     "url": "/assets/images/group-62x.png",
     "alt": ""
   },
-  "4b53298a": {
-    "url": "/assets/images/0_22x.png",
-    "alt": ""
-  },
   "-51e765b5": {
     "url": "/assets/images/group-22x.png",
+    "alt": ""
+  },
+  "-1301e1c9": {
+    "url": "/assets/images/icon-feather-phone-call.svg",
+    "alt": ""
+  },
+  "2a6e0e91": {
+    "url": "/assets/images/icon-feather-mail.svg",
+    "alt": ""
+  },
+  "1229fd6e": {
+    "url": "/assets/images/icon-feather-map.svg",
+    "alt": ""
+  },
+  "4b53298a": {
+    "url": "/assets/images/0_22x.png",
     "alt": ""
   },
   "-3de4ec5c": {
@@ -25,18 +37,6 @@
   },
   "790be25d": {
     "url": "/assets/images/group-21.svg",
-    "alt": ""
-  },
-  "-1301e1c9": {
-    "url": "/assets/images/icon-feather-phone-call.svg",
-    "alt": ""
-  },
-  "2a6e0e91": {
-    "url": "/assets/images/icon-feather-mail.svg",
-    "alt": ""
-  },
-  "1229fd6e": {
-    "url": "/assets/images/icon-feather-map.svg",
     "alt": ""
   }
 }

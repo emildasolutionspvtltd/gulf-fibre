@@ -3,6 +3,7 @@ backend:
   accept_roles:
     - admin
     - editor
+  branch: master
 media_folder: theme/assets/images
 public_folder: /assets/images
 collections:
@@ -258,6 +259,80 @@ collections:
             name: title
             widget: hidden
             default: Texts
+          - hint: 'Original text: CONTACT US, key: 253fd2be'
+            label: Text
+            name: 253fd2be
+            widget: string
+          - hint: 'Original text: LET’S CHAT! GET IN TOUCH, key: -24a4bb90'
+            label: Text
+            name: '-24a4bb90'
+            widget: string
+          - hint: >-
+              Original text: Reach out to our dedicated customer support team
+              for prompt assistance and exceptional service. We’re here to help
+              with any inquiries or concerns you may have regarding our products
+              or orders., key: 139c21c6
+            label: Text
+            name: 139c21c6
+            widget: text
+          - hint: "Original text: +971\_507\_605\_133 , key: 42b4c4b0"
+            label: Text
+            name: 42b4c4b0
+            widget: string
+          - hint: 'Original text: +48 502 128 475, key: 26ef87cf'
+            label: Text
+            name: 26ef87cf
+            widget: string
+          - hint: 'Original text: admin@gulffibretextile.com , key: -1e422aef'
+            label: Text
+            name: '-1e422aef'
+            widget: string
+          - hint: 'Original text: support@gulffibretextile.com, key: -37e6391'
+            label: Text
+            name: '-37e6391'
+            widget: string
+          - hint: 'Original text: No.103 Makateb building , key: -4c5ce2a6'
+            label: Text
+            name: '-4c5ce2a6'
+            widget: string
+          - hint: 'Original text: Airport Road, 95687 Dubai, UAE, key: 2b20bc5c'
+            label: Text
+            name: 2b20bc5c
+            widget: string
+          - hint: >-
+              Original text: Thank you! Your submission has been received!, key:
+              5a0ea5a1
+            label: Text
+            name: 5a0ea5a1
+            widget: string
+          - hint: >-
+              Original text: Oops! Something went wrong while submitting the
+              form., key: -7c112e99
+            label: Text
+            name: '-7c112e99'
+            widget: string
+          - hint: 'Original text: Gulf Fibre Textile Trading Co. LLC:, key: -2cd9c5fb'
+            label: Text
+            name: '-2cd9c5fb'
+            widget: string
+          - hint: >-
+              Original text: Your destination for premium home textiles and
+              more., key: -33604410
+            label: Text
+            name: '-33604410'
+            widget: string
+          - hint: >-
+              Original text: All Rights Reserved © Gulf Fibre Gulf Fibre Textile
+              Trading Co, key: 4fc375db
+            label: Text
+            name: 4fc375db
+            widget: string
+          - hint: >-
+              Original text: Designed & Developed by Emilda Solutions, key:
+              7bea200a
+            label: Text
+            name: 7bea200a
+            widget: string
           - hint: 'Original text: EXQUISITE FABRIC SELECTION, key: 6cb9f998'
             label: Text
             name: 6cb9f998
@@ -359,80 +434,6 @@ collections:
             label: Text
             name: 78e885e9
             widget: text
-          - hint: 'Original text: CONTACT US, key: 253fd2be'
-            label: Text
-            name: 253fd2be
-            widget: string
-          - hint: 'Original text: LET’S CHAT! GET IN TOUCH, key: -24a4bb90'
-            label: Text
-            name: '-24a4bb90'
-            widget: string
-          - hint: >-
-              Original text: Reach out to our dedicated customer support team
-              for prompt assistance and exceptional service. We’re here to help
-              with any inquiries or concerns you may have regarding our products
-              or orders., key: 139c21c6
-            label: Text
-            name: 139c21c6
-            widget: text
-          - hint: "Original text: +971\_507\_605\_133 , key: 42b4c4b0"
-            label: Text
-            name: 42b4c4b0
-            widget: string
-          - hint: 'Original text: +48 502 128 475, key: 26ef87cf'
-            label: Text
-            name: 26ef87cf
-            widget: string
-          - hint: 'Original text: admin@gulffibretextile.com , key: -1e422aef'
-            label: Text
-            name: '-1e422aef'
-            widget: string
-          - hint: 'Original text: support@gulffibretextile.com, key: -37e6391'
-            label: Text
-            name: '-37e6391'
-            widget: string
-          - hint: 'Original text: No.103 Makateb building , key: -4c5ce2a6'
-            label: Text
-            name: '-4c5ce2a6'
-            widget: string
-          - hint: 'Original text: Airport Road, 95687 Dubai, UAE, key: 2b20bc5c'
-            label: Text
-            name: 2b20bc5c
-            widget: string
-          - hint: >-
-              Original text: Thank you! Your submission has been received!, key:
-              5a0ea5a1
-            label: Text
-            name: 5a0ea5a1
-            widget: string
-          - hint: >-
-              Original text: Oops! Something went wrong while submitting the
-              form., key: -7c112e99
-            label: Text
-            name: '-7c112e99'
-            widget: string
-          - hint: 'Original text: Gulf Fibre Textile Trading Co. LLC:, key: -2cd9c5fb'
-            label: Text
-            name: '-2cd9c5fb'
-            widget: string
-          - hint: >-
-              Original text: Your destination for premium home textiles and
-              more., key: -33604410
-            label: Text
-            name: '-33604410'
-            widget: string
-          - hint: >-
-              Original text: All Rights Reserved © Gulf Fibre Gulf Fibre Textile
-              Trading Co, key: 4fc375db
-            label: Text
-            name: 4fc375db
-            widget: string
-          - hint: >-
-              Original text: Designed & Developed by Emilda Solutions, key:
-              7bea200a
-            label: Text
-            name: 7bea200a
-            widget: string
       - label: Links
         name: links
         file: cms/_data/links.json
@@ -475,7 +476,7 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: 4b53298a
+            name: '-51e765b5'
             widget: object
             fields:
               - name: url
@@ -488,7 +489,46 @@ collections:
                 widget: string
                 required: false
           - label: Image
-            name: '-51e765b5'
+            name: '-1301e1c9'
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 2a6e0e91
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 1229fd6e
+            widget: object
+            fields:
+              - name: url
+                label: Image Url
+                widget: image
+                allow_multiple: false
+                required: false
+              - name: alt
+                label: Image Alt
+                widget: string
+                required: false
+          - label: Image
+            name: 4b53298a
             widget: object
             fields:
               - name: url
@@ -541,45 +581,6 @@ collections:
                 required: false
           - label: Image
             name: 790be25d
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-          - label: Image
-            name: '-1301e1c9'
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-          - label: Image
-            name: 2a6e0e91
-            widget: object
-            fields:
-              - name: url
-                label: Image Url
-                widget: image
-                allow_multiple: false
-                required: false
-              - name: alt
-                label: Image Alt
-                widget: string
-                required: false
-          - label: Image
-            name: 1229fd6e
             widget: object
             fields:
               - name: url
